@@ -8,6 +8,7 @@ const authDiv = $('#auth');
 const forestDiv = $('#forest');
 const logoutButton = $('#navbar-logout-button');
 const logInButton = $('#google-auth');
+const hutDiv = $('#hut');
 
 const checkLoginStatus = () => {
   firebase.auth().onAuthStateChanged((user) => {
@@ -18,11 +19,13 @@ const checkLoginStatus = () => {
       mushroomList.buildForest();
       mycologistList.buildHut();
       logInButton.addClass('hide');
+      hutDiv.removeClass('hide');
     } else {
       authDiv.removeClass('hide');
       forestDiv.addClass('hide');
       logoutButton.addClass('hide');
       logInButton.removeClass('hide');
+      hutDiv.addClass('hide');
     }
   });
 };

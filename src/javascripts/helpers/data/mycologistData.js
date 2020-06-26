@@ -1,7 +1,7 @@
 import axios from 'axios';
 import apiKeys from '../apiKeys.json';
 
-const baseUrl = apiKeys.firebaseConfig.databaseURL;
+const baseUrl = apiKeys.firebaseKeys.databaseURL;
 
 const getMycologists = () => new Promise((resolve, reject) => {
   axios.get(`${baseUrl}/mycologists.json`)
